@@ -1,6 +1,6 @@
 ﻿using CoffeeMaker.Core.Enums;
 
-namespace CoffeeMaker.Implementations;
+namespace CoffeeMaker.Core.Services.Data;
 
 public class SystemStatus
 {

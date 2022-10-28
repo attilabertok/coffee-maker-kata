@@ -1,4 +1,6 @@
-﻿namespace CoffeeMaker;
+﻿using CoffeeMaker.Core.Enums;
+
+namespace CoffeeMaker.Core;
 
 public interface ICoffeeMakerStateProvider
 {

@@ -1,7 +1,7 @@
 ﻿using CoffeeMaker.Core.Enums;
-using CoffeeMaker.Implementations;
+using CoffeeMaker.Core.Services.Data;
 
-namespace CoffeeMaker.Interactors;
+namespace CoffeeMaker.Core.Interactors;
 
 public class IsBrewingRequestedInteractor
 {

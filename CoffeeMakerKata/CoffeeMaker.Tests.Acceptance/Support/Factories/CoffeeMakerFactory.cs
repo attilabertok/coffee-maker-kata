@@ -1,4 +1,6 @@
 ﻿using CoffeeMaker.Api;
+using CoffeeMaker.Core;
+using CoffeeMaker.Core.Enums;
 using CoffeeMaker.Entities;
 using CoffeeMaker.Tests.Acceptance.Support.Extensions;
 

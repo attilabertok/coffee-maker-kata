@@ -1,6 +1,6 @@
 ﻿using CoffeeMaker.Core.Enums;
 
-namespace CoffeeMaker.Interactors;
+namespace CoffeeMaker.Core.Interactors;
 
 public class CanBrewInteractor
 {

@@ -1,4 +1,5 @@
-﻿using CoffeeMaker.Services;
+﻿using CoffeeMaker.Core;
+using CoffeeMaker.Services;
 
 namespace CoffeeMaker.Tests.Unit.Services;
 

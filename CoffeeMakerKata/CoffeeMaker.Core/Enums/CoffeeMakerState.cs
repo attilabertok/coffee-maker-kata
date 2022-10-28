@@ -1,4 +1,4 @@
-﻿namespace CoffeeMaker;
+﻿namespace CoffeeMaker.Core.Enums;
 
 public enum CoffeeMakerState
 {

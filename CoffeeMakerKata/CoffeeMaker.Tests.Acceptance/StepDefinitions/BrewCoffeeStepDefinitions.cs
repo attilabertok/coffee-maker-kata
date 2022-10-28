@@ -1,7 +1,11 @@
-﻿using CoffeeMaker.Hardware.Adapter;
+﻿using CoffeeMaker.Core.Enums;
+using CoffeeMaker.Hardware.Adapter;
 using CoffeeMaker.Hardware.Interface;
 using CoffeeMaker.Services;
 using CoffeeMaker.Tests.Acceptance.Support.Factories;
+using BoilerStatus = CoffeeMaker.Hardware.Interface.BoilerStatus;
+using BrewButtonStatus = CoffeeMaker.Hardware.Interface.BrewButtonStatus;
+using WarmerPlateStatus = CoffeeMaker.Hardware.Interface.WarmerPlateStatus;
 
 namespace CoffeeMaker.Tests.Acceptance.StepDefinitions
 {

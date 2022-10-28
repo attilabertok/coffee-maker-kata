@@ -1,4 +1,7 @@
-﻿namespace CoffeeMaker.Tests.Acceptance.Support.Extensions;
+﻿using CoffeeMaker.Core;
+using CoffeeMaker.Core.Enums;
+
+namespace CoffeeMaker.Tests.Acceptance.Support.Extensions;
 
 public static class CoffeeMakerStateProviderExtensions
 {

@@ -1,6 +1,8 @@
 ﻿using CoffeeMaker.Api;
-using CoffeeMaker.Implementations;
-using CoffeeMaker.Interactors;
+using CoffeeMaker.Core;
+using CoffeeMaker.Core.Enums;
+using CoffeeMaker.Core.Interactors;
+using CoffeeMaker.Core.Services.Data;
 
 namespace CoffeeMaker.Entities;
 

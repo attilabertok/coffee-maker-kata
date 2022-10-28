@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using CoffeeMaker.Core.Enums;
+using FluentAssertions;
 
 namespace CoffeeMaker.Tests.Unit.Services;
 
