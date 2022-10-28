@@ -1,4 +1,4 @@
-﻿namespace CoffeeMakerHardwareInterface;
+﻿namespace CoffeeMaker.Hardware.Interface;
 
 public enum BoilerState
 {

@@ -3,15 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeMakerHardwareInterface", "CoffeeMakerHardwareInterface\CoffeeMakerHardwareInterface.csproj", "{1BF19EBA-115E-4E45-A231-05A136820481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeMaker.Hardware.Interface", "CoffeeMakerHardwareInterface\CoffeeMaker.Hardware.Interface.csproj", "{1BF19EBA-115E-4E45-A231-05A136820481}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49E87649-E915-4B4C-B2FD-2E21C177109E}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.filenesting.json = .filenesting.json
 		Directory.Build.props = Directory.Build.props
+		..\README.md = ..\README.md
 		stylecop.json = stylecop.json
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeMaker.Tests.Acceptance", "CoffeeMaker.Tests.Acceptance\CoffeeMaker.Tests.Acceptance.csproj", "{EC45A0B4-1756-435A-83FF-6AF0CC5267BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeMaker", "CoffeeMaker\CoffeeMaker.csproj", "{444448DA-F8E1-4FAC-A286-25F513C17DAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeMaker.Tests.Unit", "CoffeeMaker.Tests.Unit\CoffeeMaker.Tests.Unit.csproj", "{510EE20B-A3E6-4E59-A671-58566ABBA36E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMaker.Hardware.Adapter", "CoffeeMaker.Hardware.Adapter\CoffeeMaker.Hardware.Adapter.csproj", "{21F62EEB-3297-4C27-A207-7120EBB3DC65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMaker.Hardware.Adapter.Tests.Unit", "CoffeeMaker.Hardware.Adapter.Tests.Unit\CoffeeMaker.Hardware.Adapter.Tests.Unit.csproj", "{2EC79CEF-7256-4BF1-A01A-87375B298AF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +34,26 @@ Global
 		{1BF19EBA-115E-4E45-A231-05A136820481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BF19EBA-115E-4E45-A231-05A136820481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BF19EBA-115E-4E45-A231-05A136820481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC45A0B4-1756-435A-83FF-6AF0CC5267BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC45A0B4-1756-435A-83FF-6AF0CC5267BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC45A0B4-1756-435A-83FF-6AF0CC5267BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC45A0B4-1756-435A-83FF-6AF0CC5267BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{444448DA-F8E1-4FAC-A286-25F513C17DAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{444448DA-F8E1-4FAC-A286-25F513C17DAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{444448DA-F8E1-4FAC-A286-25F513C17DAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{444448DA-F8E1-4FAC-A286-25F513C17DAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{510EE20B-A3E6-4E59-A671-58566ABBA36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{510EE20B-A3E6-4E59-A671-58566ABBA36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{510EE20B-A3E6-4E59-A671-58566ABBA36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{510EE20B-A3E6-4E59-A671-58566ABBA36E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F62EEB-3297-4C27-A207-7120EBB3DC65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F62EEB-3297-4C27-A207-7120EBB3DC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F62EEB-3297-4C27-A207-7120EBB3DC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F62EEB-3297-4C27-A207-7120EBB3DC65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC79CEF-7256-4BF1-A01A-87375B298AF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC79CEF-7256-4BF1-A01A-87375B298AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC79CEF-7256-4BF1-A01A-87375B298AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC79CEF-7256-4BF1-A01A-87375B298AF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

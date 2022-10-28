@@ -1,4 +1,4 @@
-﻿namespace CoffeeMakerHardwareInterface;
+﻿namespace CoffeeMaker.Hardware.Interface;
 
 public interface ICoffeeMakerApi
 {
@@ -16,7 +16,7 @@ public interface ICoffeeMakerApi
 
     /// <summary>
     /// The brew button is a momentary switch that remembers its state. Each call to this function returns the
-    /// remembered state and then resets that state to NOT_PUSHED.
+    /// remembered state and then resets that state to NotPushed.
     /// Thus, even if this function is polled at a very slow rate, it will still detect when the brew button is
     /// pushed.
     /// </summary>
@@ -33,7 +33,7 @@ public interface ICoffeeMakerApi
     /// This function turns the heating element in the warmer plate on or off.
     /// </summary>
     /// <param name="s">The new warmer state.</param>
-    public void SetWarmerState(WarmerState s);
+    public void SetWarmerState(WarmerPlateState s);
 
     /// <summary>
     /// This function turns the indicator light on or off.
