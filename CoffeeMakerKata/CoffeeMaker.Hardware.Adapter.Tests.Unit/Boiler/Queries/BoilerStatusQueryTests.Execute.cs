@@ -1,4 +1,5 @@
-﻿using CoffeeMaker.Hardware.Adapter.Tests.Unit.TestData;
+﻿using CoffeeMaker.Hardware.Adapter.Boiler.Mappers;
+using CoffeeMaker.Hardware.Adapter.Tests.Unit.TestData;
 using CoffeeMaker.Hardware.Interface;
 using FluentAssertions;
 using NSubstitute;
@@ -17,11 +18,12 @@ public partial class BoilerStatusQueryTests
         {
             mockApi.GetBoilerStatus()
                 .Returns(boilerStatus);
+            var expected = boilerStatus.Map();
 
             var result = sut.Execute();
 
             result.Should()
-                .Be(boilerStatus);
+                .Be(expected);
         }
     }
 }

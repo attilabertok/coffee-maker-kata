@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoffeeMakerHardwareInterface\CoffeeMaker.Hardware.Interface.csproj" />
+    <ProjectReference Include="..\CoffeeMaker.Core\CoffeeMaker.Core.csproj" />
   </ItemGroup>
 
 </Project>

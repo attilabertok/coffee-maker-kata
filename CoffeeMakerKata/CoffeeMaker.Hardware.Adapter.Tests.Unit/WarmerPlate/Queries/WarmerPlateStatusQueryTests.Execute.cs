@@ -1,4 +1,5 @@
 ﻿using CoffeeMaker.Hardware.Adapter.Tests.Unit.TestData;
+using CoffeeMaker.Hardware.Adapter.WarmerPlate.Mappers;
 using CoffeeMaker.Hardware.Interface;
 using FluentAssertions;
 using NSubstitute;
@@ -17,11 +18,12 @@ public partial class WarmerPlateStatusQueryTests
         {
             mockApi.GetWarmerPlateStatus()
                 .Returns(warmerPlateStatus);
+            var expected = warmerPlateStatus.Map();
 
             var result = sut.Execute();
 
             result.Should()
-                .Be(warmerPlateStatus);
+                .Be(expected);
         }
     }
 }

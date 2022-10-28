@@ -43,6 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Boiler\Mappers\" />
     <Folder Include="Boiler\Queries\" />
     <Folder Include="BrewButton\Queries\" />
   </ItemGroup>

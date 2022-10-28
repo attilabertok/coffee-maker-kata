@@ -1,5 +1,5 @@
 ﻿using CoffeeMaker.Api.Queries.Base;
-using CoffeeMaker.Hardware.Interface;
+using CoffeeMaker.Core.Enums;
 
 namespace CoffeeMaker.Api.Queries;
 

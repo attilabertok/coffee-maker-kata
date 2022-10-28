@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Interface;
+﻿using CoffeeMaker.Core.Enums;
 
 namespace CoffeeMaker.Interactors;
 

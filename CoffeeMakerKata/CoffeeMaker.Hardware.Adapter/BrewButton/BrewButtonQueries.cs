@@ -3,6 +3,8 @@ using CoffeeMaker.Api.Queries.Base;
 using CoffeeMaker.Hardware.Adapter.BrewButton.Queries;
 using CoffeeMaker.Hardware.Interface;
 
+using BrewButtonStatus = CoffeeMaker.Core.Enums.BrewButtonStatus;
+
 namespace CoffeeMaker.Hardware.Adapter.BrewButton;
 
 public class BrewButtonQueries : IBrewButtonQueries

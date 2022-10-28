@@ -1,10 +1,13 @@
 ﻿using CoffeeMaker.Api.Queries.Base;
+using CoffeeMaker.Hardware.Adapter.Boiler.Mappers;
 using CoffeeMaker.Hardware.Interface;
+
+using CoreBoilerStatus = CoffeeMaker.Core.Enums.BoilerStatus;
 
 namespace CoffeeMaker.Hardware.Adapter.Boiler.Queries;
 
 public class BoilerStatusQuery :
-    IQuery<BoilerStatus>
+    IQuery<CoreBoilerStatus>
 {
     private readonly ICoffeeMakerApi api;
 
@@ -13,8 +16,8 @@ public class BoilerStatusQuery :
         this.api = api;
     }
 
-    public BoilerStatus Execute()
+    public CoreBoilerStatus Execute()
     {
-        return api.GetBoilerStatus();
+        return api.GetBoilerStatus().Map();
     }
 }

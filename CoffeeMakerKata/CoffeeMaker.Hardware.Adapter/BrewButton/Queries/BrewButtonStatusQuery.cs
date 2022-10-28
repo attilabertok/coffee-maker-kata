@@ -1,5 +1,8 @@
 ﻿using CoffeeMaker.Api.Queries.Base;
+using CoffeeMaker.Hardware.Adapter.BrewButton.Mappers;
 using CoffeeMaker.Hardware.Interface;
+
+using BrewButtonStatus = CoffeeMaker.Core.Enums.BrewButtonStatus;
 
 namespace CoffeeMaker.Hardware.Adapter.BrewButton.Queries;
 
@@ -15,6 +18,6 @@ public class BrewButtonStatusQuery :
 
     public BrewButtonStatus Execute()
     {
-        return api.GetBrewButtonStatus();
+        return api.GetBrewButtonStatus().Map();
     }
 }

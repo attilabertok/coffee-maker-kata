@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -14,13 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoffeeMaker.Core\CoffeeMaker.Core.csproj" />
-    <ProjectReference Include="..\CoffeeMakerHardwareInterface\CoffeeMaker.Hardware.Interface.csproj" />
-    <ProjectReference Include="..\CoffeeMaker\CoffeeMaker.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Boiler\Mappers\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Interactors\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
-﻿using CoffeeMaker.Hardware.Adapter.Tests.Unit.TestData;
+﻿using CoffeeMaker.Hardware.Adapter.BrewButton.Mappers;
+using CoffeeMaker.Hardware.Adapter.Tests.Unit.TestData;
 using CoffeeMaker.Hardware.Interface;
 using FluentAssertions;
 using NSubstitute;
@@ -17,11 +18,12 @@ public partial class BrewButtonStatusQueryTests
         {
             mockApi.GetBrewButtonStatus()
                 .Returns(brewButtonStatus);
+            var expected = brewButtonStatus.Map();
 
             var result = sut.Execute();
 
             result.Should()
-                .Be(brewButtonStatus);
+                .Be(expected);
         }
     }
 }
