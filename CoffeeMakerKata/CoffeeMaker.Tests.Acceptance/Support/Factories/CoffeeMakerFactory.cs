@@ -14,7 +14,8 @@ public static class CoffeeMakerFactory
         var stateProvider = ConfigureMockStateProvider();
         stateProvider.SetState(state);
         var mockPollConditionProvider = Substitute.For<IPollConditionProvider>();
-        mockPollConditionProvider.PollCondition.Returns(() => CustomPollCondition.RunExactly(1));
+        var pollCondition = new CustomPollCondition();
+        mockPollConditionProvider.PollCondition.Returns(() => pollCondition.RunExactly(1));
 
         return new Mark4CoffeeMaker(stateProvider, commands, mockPollConditionProvider, systemStatusProvider);
     }

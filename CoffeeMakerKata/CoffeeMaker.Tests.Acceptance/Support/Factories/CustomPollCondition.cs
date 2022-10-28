@@ -1,10 +1,10 @@
 ﻿namespace CoffeeMaker.Tests.Acceptance.Support.Factories;
 
-public static class CustomPollCondition
+public class CustomPollCondition
 {
-    private static int runCount = 0;
+    private int runCount;
 
-    public static bool RunExactly(int expectedRunCount)
+    public bool RunExactly(int expectedRunCount)
     {
         if (runCount >= expectedRunCount)
         {
