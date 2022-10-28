@@ -1,6 +1,5 @@
 ﻿using CoffeeMaker.Hardware.Adapter.Indicator.Commands;
 using CoffeeMaker.Hardware.Interface;
-using FluentAssertions;
 using NSubstitute;
 
 namespace CoffeeMaker.Hardware.Adapter.Tests.Unit.Indicator.Commands;

@@ -1,5 +1,5 @@
 ﻿using CoffeeMaker.Api;
-using CoffeeMaker.Implementations;
+using CoffeeMaker.Entities;
 using CoffeeMaker.Tests.Acceptance.Support.Extensions;
 
 namespace CoffeeMaker.Tests.Acceptance.Support.Factories;
