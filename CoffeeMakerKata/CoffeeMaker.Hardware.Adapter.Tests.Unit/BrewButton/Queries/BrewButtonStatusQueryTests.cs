@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Adapter.BrewButton.Queries;
+﻿using CoffeeMaker.Hardware.Adapter.BrewButtons.Queries;
 using CoffeeMaker.Hardware.Interface;
 using NSubstitute;
 

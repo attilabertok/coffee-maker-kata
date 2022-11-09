@@ -1,68 +1,69 @@
-﻿using CoffeeMaker.Core.Enums;
-using CoffeeMaker.Hardware.Adapter;
-using CoffeeMaker.Hardware.Interface;
+﻿using CoffeeMaker.Core.Entities.Boilers;
+using CoffeeMaker.Core.Entities.BrewButtons;
+using CoffeeMaker.Core.Entities.WarmerPlates;
+using CoffeeMaker.Core.Enums;
 using CoffeeMaker.Services;
 using CoffeeMaker.Tests.Acceptance.Support.Factories;
-using BoilerStatus = CoffeeMaker.Hardware.Interface.BoilerStatus;
-using BrewButtonStatus = CoffeeMaker.Hardware.Interface.BrewButtonStatus;
-using WarmerPlateStatus = CoffeeMaker.Hardware.Interface.WarmerPlateStatus;
+
+using BoilerStatus = CoffeeMaker.Core.Enums.BoilerStatus;
+using BrewButtonStatus = CoffeeMaker.Core.Enums.BrewButtonStatus;
+using WarmerPlateStatus = CoffeeMaker.Core.Enums.WarmerPlateStatus;
 
 namespace CoffeeMaker.Tests.Acceptance.StepDefinitions
 {
     [Binding]
     public class BrewCoffeeStepDefinitions
     {
-        private ICoffeeMakerApi? coffeeMakerApi;
+        private readonly IBoiler boiler = Substitute.For<IBoiler>();
+        private readonly IBrewButton brewButton = Substitute.For<IBrewButton>();
+        private readonly IWarmerPlate warmerPlate = Substitute.For<IWarmerPlate>();
 
         private ICoffeeMaker? coffeeMaker;
         private CoffeeMakerState state;
 
         [Given(@"a coffee maker in (.*) state")]
-        public void GivenACoffeeMakerInACertainState(CoffeeMakerState state)
+        public void GivenACoffeeMakerInACertainState(CoffeeMakerState coffeeMakerState)
         {
-            this.state = state;
-
-            coffeeMakerApi = Substitute.For<ICoffeeMakerApi>();
+            state = coffeeMakerState;
         }
 
         [Given(@"an empty pot placed on the warmer plate")]
         public void GivenAnEmptyPotPlacedOnTheWarmerPlate()
         {
-            coffeeMakerApi.GetWarmerPlateStatus().Returns(WarmerPlateStatus.PotEmpty);
+            warmerPlate.Status.Returns(WarmerPlateStatus.PotEmpty);
         }
 
         [Given(@"a not empty pot placed on the warmer plate")]
         public void GivenANotEmptyPotPlacedOnTheWarmerPlate()
         {
-            coffeeMakerApi.GetWarmerPlateStatus().Returns(WarmerPlateStatus.PotNotEmpty);
+            warmerPlate.Status.Returns(WarmerPlateStatus.PotNotEmpty);
         }
 
         [Given(@"no pot is placed on the warmer plate")]
         public void GivenNoPotIsPlacedOnTheWarmerPlate()
         {
-            coffeeMakerApi.GetWarmerPlateStatus().Returns(WarmerPlateStatus.WarmerEmpty);
+            warmerPlate.Status.Returns(WarmerPlateStatus.WarmerEmpty);
         }
 
         [Given(@"a boiler filled with water")]
         public void GivenABoilerFilledWithWater()
         {
-            coffeeMakerApi.GetBoilerStatus().Returns(BoilerStatus.NotEmpty);
+            boiler.Status.Returns(BoilerStatus.NotEmpty);
         }
 
         [Given(@"an empty boiler")]
         public void GivenAnEmptyBoiler()
         {
-            coffeeMakerApi.GetBoilerStatus().Returns(BoilerStatus.Empty);
+            boiler.Status.Returns(BoilerStatus.Empty);
         }
 
         [When(@"the coffee brewing is started")]
         public void WhenTheCoffeeBrewingIsStarted()
         {
-            coffeeMakerApi.GetBrewButtonStatus().Returns(BrewButtonStatus.Pushed);
+            brewButton.Status.Returns(BrewButtonStatus.Pushed);
 
-            var commands = new CoffeeMakerCommandInterface(coffeeMakerApi);
-            var systemStatusProvider = new SystemStatusProvider(new CoffeeMakerQueryInterface(coffeeMakerApi));
-            coffeeMaker = CoffeeMakerFactory.CreateMark4(state, commands, systemStatusProvider);
+            var systemStatusProvider = new SystemStatusProvider(boiler, brewButton, warmerPlate);
+            coffeeMaker = CoffeeMakerFactory.CreateMark4(state, systemStatusProvider);
 
             coffeeMaker!.Start();
         }

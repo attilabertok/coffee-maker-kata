@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Adapter.WarmerPlate.Commands;
+﻿using CoffeeMaker.Hardware.Adapter.WarmerPlates.Commands;
 using CoffeeMaker.Hardware.Interface;
 using NSubstitute;
 

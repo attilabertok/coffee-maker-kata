@@ -19,8 +19,4 @@
     <ProjectReference Include="..\CoffeeMaker\CoffeeMaker.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Boiler\Mappers\" />
-  </ItemGroup>
-
 </Project>

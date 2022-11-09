@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Adapter.Indicator.Commands;
+﻿using CoffeeMaker.Hardware.Adapter.Indicators.Commands;
 using CoffeeMaker.Hardware.Interface;
 using NSubstitute;
 

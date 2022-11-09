@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Adapter.ReliefValve.Commands;
+﻿using CoffeeMaker.Hardware.Adapter.ReliefValves.Commands;
 using CoffeeMaker.Hardware.Interface;
 using NSubstitute;
 

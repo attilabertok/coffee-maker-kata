@@ -1,5 +1,9 @@
-﻿using CoffeeMaker.Api;
-using CoffeeMaker.Core;
+﻿using CoffeeMaker.Core;
+using CoffeeMaker.Core.Entities.Boilers;
+using CoffeeMaker.Core.Entities.BrewButtons;
+using CoffeeMaker.Core.Entities.Indicators;
+using CoffeeMaker.Core.Entities.ReliefValves;
+using CoffeeMaker.Core.Entities.WarmerPlates;
 using CoffeeMaker.Core.Enums;
 using CoffeeMaker.Entities;
 using CoffeeMaker.Tests.Acceptance.Support.Extensions;
@@ -10,7 +14,6 @@ public static class CoffeeMakerFactory
 {
     public static ICoffeeMaker CreateMark4(
         CoffeeMakerState state,
-        ICoffeeMakerCommandInterface commands,
         ISystemStatusProvider systemStatusProvider)
     {
         var stateProvider = ConfigureMockStateProvider();
@@ -19,7 +22,13 @@ public static class CoffeeMakerFactory
         var pollCondition = new CustomPollCondition();
         mockPollConditionProvider.PollCondition.Returns(() => pollCondition.RunExactly(1));
 
-        return new Mark4CoffeeMaker(stateProvider, commands, mockPollConditionProvider, systemStatusProvider);
+        var boiler = Substitute.For<IBoiler>();
+        var brewButton = Substitute.For<IBrewButton>();
+        var indicator = Substitute.For<IIndicator>();
+        var reliefValve = Substitute.For<IReliefValve>();
+        var warmerPlate = Substitute.For<IWarmerPlate>();
+
+        return new Mark4CoffeeMaker(stateProvider, boiler, brewButton, indicator, reliefValve, warmerPlate, mockPollConditionProvider, systemStatusProvider);
     }
 
     private static ICoffeeMakerStateProvider ConfigureMockStateProvider()

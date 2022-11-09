@@ -1,5 +1,5 @@
 ﻿using CoffeeMaker.Hardware.Adapter.Tests.Unit.TestData;
-using CoffeeMaker.Hardware.Adapter.WarmerPlate.Mappers;
+using CoffeeMaker.Hardware.Adapter.WarmerPlates.Mappers;
 using CoffeeMaker.Hardware.Interface;
 using FluentAssertions;
 using NSubstitute;

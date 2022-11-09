@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Adapter.Boiler.Queries;
+﻿using CoffeeMaker.Hardware.Adapter.Boilers.Queries;
 using CoffeeMaker.Hardware.Interface;
 using NSubstitute;
 

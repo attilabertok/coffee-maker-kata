@@ -1,5 +1,5 @@
 ﻿using CoffeeMaker.Hardware.Adapter.Tests.Unit.Boiler.Mappers;
-using CoffeeMaker.Hardware.Adapter.WarmerPlate.Mappers;
+using CoffeeMaker.Hardware.Adapter.WarmerPlates.Mappers;
 using EnumsNET;
 using FluentAssertions;
 

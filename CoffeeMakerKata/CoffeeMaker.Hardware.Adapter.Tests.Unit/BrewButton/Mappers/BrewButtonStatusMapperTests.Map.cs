@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Adapter.BrewButton.Mappers;
+﻿using CoffeeMaker.Hardware.Adapter.BrewButtons.Mappers;
 using CoffeeMaker.Hardware.Adapter.Tests.Unit.Boiler.Mappers;
 using EnumsNET;
 using FluentAssertions;

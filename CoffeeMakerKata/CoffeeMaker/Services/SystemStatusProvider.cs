@@ -1,23 +1,25 @@
-﻿using CoffeeMaker.Api;
+﻿using CoffeeMaker.Core.Entities.Boilers;
+using CoffeeMaker.Core.Entities.BrewButtons;
+using CoffeeMaker.Core.Entities.WarmerPlates;
 using CoffeeMaker.Core.Services.Data;
 
 namespace CoffeeMaker.Services;
 
 public class SystemStatusProvider : ISystemStatusProvider
 {
-    private readonly ICoffeeMakerQueryInterface queries;
+    private readonly IBoiler boiler;
+    private readonly IBrewButton brewButton;
+    private readonly IWarmerPlate warmerPlate;
 
-    public SystemStatusProvider(ICoffeeMakerQueryInterface queries)
+    public SystemStatusProvider(IBoiler boiler, IBrewButton brewButton, IWarmerPlate warmerPlate)
     {
-        this.queries = queries;
+        this.boiler = boiler;
+        this.brewButton = brewButton;
+        this.warmerPlate = warmerPlate;
     }
 
     public SystemStatus QuerySystemStatus()
     {
-        var brewButtonStatus = queries.BrewButton.Status.Execute();
-        var warmerPlateStatus = queries.WarmerPlate.Status.Execute();
-        var boilerStatus = queries.Boiler.Status.Execute();
-
-        return new SystemStatus(brewButtonStatus, warmerPlateStatus, boilerStatus);
+        return new SystemStatus(brewButton.Status, warmerPlate.Status, boiler.Status);
     }
 }

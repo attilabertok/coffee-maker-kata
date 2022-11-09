@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Adapter.Boiler.Mappers;
+﻿using CoffeeMaker.Hardware.Adapter.Boilers.Mappers;
 using EnumsNET;
 using FluentAssertions;
 

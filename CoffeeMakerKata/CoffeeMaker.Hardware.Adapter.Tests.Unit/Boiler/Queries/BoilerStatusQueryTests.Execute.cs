@@ -1,4 +1,4 @@
-﻿using CoffeeMaker.Hardware.Adapter.Boiler.Mappers;
+﻿using CoffeeMaker.Hardware.Adapter.Boilers.Mappers;
 using CoffeeMaker.Hardware.Adapter.Tests.Unit.TestData;
 using CoffeeMaker.Hardware.Interface;
 using FluentAssertions;

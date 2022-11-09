@@ -14,7 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
+    <Folder Include="Entities\Boilers\" />
+    <Folder Include="Entities\Indicators\" />
+    <Folder Include="Entities\BrewButtons\" />
+    <Folder Include="Entities\WarmerPlates\" />
+    <Folder Include="Entities\ReliefValves\" />
   </ItemGroup>
 
 </Project>
