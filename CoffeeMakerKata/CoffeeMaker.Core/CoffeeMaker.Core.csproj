@@ -19,6 +19,7 @@
     <Folder Include="Entities\BrewButtons\" />
     <Folder Include="Entities\WarmerPlates\" />
     <Folder Include="Entities\ReliefValves\" />
+    <Folder Include="Services\Data\Extensions\" />
   </ItemGroup>
 
 </Project>

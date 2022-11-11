@@ -3,7 +3,7 @@ using CoffeeMaker.Core.Entities.BrewButtons;
 using CoffeeMaker.Core.Entities.WarmerPlates;
 using CoffeeMaker.Core.Enums;
 using CoffeeMaker.Services;
-using CoffeeMaker.Tests.Acceptance.Support.Factories;
+using CoffeeMaker.Tests.Support.Builders;
 
 using BoilerStatus = CoffeeMaker.Core.Enums.BoilerStatus;
 using BrewButtonStatus = CoffeeMaker.Core.Enums.BrewButtonStatus;
@@ -63,7 +63,10 @@ namespace CoffeeMaker.Tests.Acceptance.StepDefinitions
             brewButton.Status.Returns(BrewButtonStatus.Pushed);
 
             var systemStatusProvider = new SystemStatusProvider(boiler, brewButton, warmerPlate);
-            coffeeMaker = CoffeeMakerFactory.CreateMark4(state, systemStatusProvider);
+            coffeeMaker = new CoffeeMakerBuilder()
+                .WithSystemStatusProvider(systemStatusProvider)
+                .InState(state)
+                .Build();
 
             coffeeMaker!.Start();
         }

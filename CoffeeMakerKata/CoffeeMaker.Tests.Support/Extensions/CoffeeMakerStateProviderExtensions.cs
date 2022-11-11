@@ -1,7 +1,8 @@
 ﻿using CoffeeMaker.Core;
 using CoffeeMaker.Core.Enums;
+using NSubstitute;
 
-namespace CoffeeMaker.Tests.Acceptance.Support.Extensions;
+namespace CoffeeMaker.Tests.Support.Extensions;
 
 public static class CoffeeMakerStateProviderExtensions
 {

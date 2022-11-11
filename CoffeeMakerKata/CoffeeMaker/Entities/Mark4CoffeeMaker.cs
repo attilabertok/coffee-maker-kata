@@ -7,6 +7,7 @@ using CoffeeMaker.Core.Entities.WarmerPlates;
 using CoffeeMaker.Core.Enums;
 using CoffeeMaker.Core.Interactors;
 using CoffeeMaker.Core.Services.Data;
+using CoffeeMaker.Core.Services.Data.Extensions;
 
 namespace CoffeeMaker.Entities;
 
@@ -21,6 +22,7 @@ public class Mark4CoffeeMaker :
     private readonly ICoffeeMakerStateProvider stateProvider;
     private readonly IPollConditionProvider pollConditionProvider;
     private readonly ISystemStatusProvider systemStatusProvider;
+    private SystemStatus systemStatus;
 
     public Mark4CoffeeMaker(
         IBoiler boiler,
@@ -40,6 +42,8 @@ public class Mark4CoffeeMaker :
         this.warmerPlate = warmerPlate;
         this.pollConditionProvider = pollConditionProvider;
         this.systemStatusProvider = systemStatusProvider;
+
+        systemStatus = systemStatusProvider.QuerySystemStatus();
     }
 
     public CoffeeMakerState State => stateProvider.State;
@@ -48,17 +52,30 @@ public class Mark4CoffeeMaker :
     {
         while (pollConditionProvider.PollCondition())
         {
-            var systemStatus = systemStatusProvider.QuerySystemStatus();
+            systemStatus = systemStatusProvider.QuerySystemStatus();
 
-            Run(systemStatus);
+            Run();
         }
     }
 
-    private void Run(SystemStatus systemStatus)
+    private void Run()
     {
-        if (IsBrewingRequestedInteractor.Execute(systemStatus))
+        if (systemStatus.IsBrewingRequested())
         {
-            AttemptToBrewInteractor.AttemptToBrew(stateProvider, systemStatus);
+            Brew();
         }
+        else
+        {
+            KeepWarm();
+        }
+    }
+
+    private void KeepWarm()
+    {
+    }
+
+    private void Brew()
+    {
+        AttemptToBrewInteractor.AttemptToBrew(stateProvider, systemStatus);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace CoffeeMaker.Tests.Acceptance.Support.Factories;
+﻿namespace CoffeeMaker.Tests.Support.Factories;
 
 public class CustomPollCondition
 {
