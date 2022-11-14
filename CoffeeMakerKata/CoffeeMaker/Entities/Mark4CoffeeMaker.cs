@@ -22,6 +22,8 @@ public class Mark4CoffeeMaker :
     private readonly ICoffeeMakerStateProvider stateProvider;
     private readonly IPollConditionProvider pollConditionProvider;
     private readonly ISystemStatusProvider systemStatusProvider;
+    private readonly IAttemptToBrewInteractor attemptToBrewInteractor;
+    private readonly IIsBrewingRequestedInteractor brewingRequestedInteractor;
     private SystemStatus systemStatus;
 
     public Mark4CoffeeMaker(
@@ -32,7 +34,9 @@ public class Mark4CoffeeMaker :
         IWarmerPlate warmerPlate,
         ICoffeeMakerStateProvider stateProvider,
         IPollConditionProvider pollConditionProvider,
-        ISystemStatusProvider systemStatusProvider)
+        ISystemStatusProvider systemStatusProvider,
+        IAttemptToBrewInteractor attemptToBrewInteractor,
+        IIsBrewingRequestedInteractor brewingRequestedInteractor)
     {
         this.stateProvider = stateProvider;
         this.boiler = boiler;
@@ -42,6 +46,8 @@ public class Mark4CoffeeMaker :
         this.warmerPlate = warmerPlate;
         this.pollConditionProvider = pollConditionProvider;
         this.systemStatusProvider = systemStatusProvider;
+        this.attemptToBrewInteractor = attemptToBrewInteractor;
+        this.brewingRequestedInteractor = brewingRequestedInteractor;
 
         systemStatus = systemStatusProvider.QuerySystemStatus();
     }
@@ -60,7 +66,7 @@ public class Mark4CoffeeMaker :
 
     private void Run()
     {
-        if (systemStatus.IsBrewingRequested())
+        if (systemStatus.IsBrewingRequested(brewingRequestedInteractor))
         {
             Brew();
         }
@@ -76,6 +82,6 @@ public class Mark4CoffeeMaker :
 
     private void Brew()
     {
-        AttemptToBrewInteractor.AttemptToBrew(stateProvider, systemStatus);
+        attemptToBrewInteractor.AttemptToBrew(systemStatus);
     }
 }

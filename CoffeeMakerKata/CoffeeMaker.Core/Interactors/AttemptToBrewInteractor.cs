@@ -2,11 +2,22 @@
 
 namespace CoffeeMaker.Core.Interactors;
 
-public class AttemptToBrewInteractor
+public class AttemptToBrewInteractor : IAttemptToBrewInteractor
 {
-    public static void AttemptToBrew(ICoffeeMakerStateProvider stateProvider, SystemStatus systemStatus)
+    private readonly ICoffeeMakerStateProvider stateProvider;
+    private readonly ICanBrewInteractor canBrewInteractor;
+
+    public AttemptToBrewInteractor(
+        ICoffeeMakerStateProvider stateProvider,
+        ICanBrewInteractor canBrewInteractor)
     {
-        if (CanBrewInteractor.Execute(systemStatus.WarmerPlateStatus, systemStatus.BoilerStatus))
+        this.stateProvider = stateProvider;
+        this.canBrewInteractor = canBrewInteractor;
+    }
+
+    public void AttemptToBrew(SystemStatus systemStatus)
+    {
+        if (CanBrew(systemStatus))
         {
             stateProvider.StartBrewing();
         }
@@ -14,5 +25,10 @@ public class AttemptToBrewInteractor
         {
             stateProvider.SwitchToError();
         }
+    }
+
+    private bool CanBrew(SystemStatus systemStatus)
+    {
+        return canBrewInteractor.CanBrew(systemStatus.WarmerPlateStatus, systemStatus.BoilerStatus);
     }
 }

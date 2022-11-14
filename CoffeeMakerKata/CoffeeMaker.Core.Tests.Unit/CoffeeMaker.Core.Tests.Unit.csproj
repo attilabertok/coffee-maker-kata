@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bogus" Version="34.0.2" />
+    <PackageReference Include="FluentArrange.NSubstitute" Version="0.10.0" />
     <PackageReference Include="FluentAssertions" Version="6.8.0" />
     <PackageReference Include="FluentAssertions.Analyzers" Version="0.17.2">
       <PrivateAssets>all</PrivateAssets>
@@ -20,6 +22,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="NSubstitute.Verify.That" Version="2.0.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -37,12 +40,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CoffeeMaker.Tests.Support\CoffeeMaker.Tests.Support.csproj" />
-    <ProjectReference Include="..\CoffeeMaker\CoffeeMaker.csproj" />
+    <Folder Include="Entities\Boilers\" />
+    <Folder Include="Entities\BrewButtons\" />
+    <Folder Include="Entities\Indicators\" />
+    <Folder Include="Entities\WarmerPlates\" />
+    <Folder Include="Entities\ReliefValves\" />
+    <Folder Include="Interactors\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\CoffeeMaker.Core\CoffeeMaker.Core.csproj" />
+    <ProjectReference Include="..\CoffeeMaker.Tests.Support\CoffeeMaker.Tests.Support.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,9 +2,9 @@
 
 namespace CoffeeMaker.Core.Interactors;
 
-public class CanBrewInteractor
+public class CanBrewInteractor : ICanBrewInteractor
 {
-    public static bool Execute(WarmerPlateStatus warmerPlateStatus, BoilerStatus boilerStatus)
+    public bool CanBrew(WarmerPlateStatus warmerPlateStatus, BoilerStatus boilerStatus)
     {
         return warmerPlateStatus == WarmerPlateStatus.PotEmpty && boilerStatus == BoilerStatus.NotEmpty;
     }

@@ -3,9 +3,9 @@ using CoffeeMaker.Core.Services.Data;
 
 namespace CoffeeMaker.Core.Interactors;
 
-public class IsBrewingRequestedInteractor
+public class IsBrewingRequestedInteractor : IIsBrewingRequestedInteractor
 {
-    public static bool Execute(SystemStatus systemStatus)
+    public bool ShouldBrew(SystemStatus systemStatus)
     {
         return systemStatus.BrewButtonStatus == BrewButtonStatus.Pushed;
     }

@@ -1,4 +1,5 @@
 ﻿using CoffeeMaker.Core.Enums;
+using CoffeeMaker.Core.Interactors;
 using CoffeeMaker.Core.Services.Data;
 using CoffeeMaker.Tests.Support.Builders;
 using NSubstitute;
@@ -29,6 +30,10 @@ public partial class Mark4CoffeeMakerTests
                     WarmerPlateStatus.PotEmpty,
                     BoilerStatus.NotEmpty);
                 systemStatusProvider.QuerySystemStatus().Returns(toBrew);
+
+                var brewingRequestedInteractor = builder.Context.Dependency<IIsBrewingRequestedInteractor>();
+                brewingRequestedInteractor.ShouldBrew(Arg.Any<SystemStatus>())
+                    .Returns(s => s.Arg<SystemStatus>().BrewButtonStatus == BrewButtonStatus.Pushed);
             }
         }
     }

@@ -4,8 +4,8 @@ namespace CoffeeMaker.Core.Services.Data.Extensions;
 
 public static class SystemStatusExtensions
 {
-    public static bool IsBrewingRequested(this SystemStatus systemStatus)
+    public static bool IsBrewingRequested(this SystemStatus systemStatus, IIsBrewingRequestedInteractor interactor)
     {
-        return IsBrewingRequestedInteractor.Execute(systemStatus);
+        return interactor.ShouldBrew(systemStatus);
     }
 }
