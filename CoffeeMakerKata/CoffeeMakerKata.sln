@@ -28,7 +28,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeMaker.Core", "CoffeeM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeMaker.Tests.Support", "CoffeeMaker.Tests.Support\CoffeeMaker.Tests.Support.csproj", "{670F519A-69C4-4DE0-A9F0-7DFA99845F53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMaker.Core.Tests.Unit", "CoffeeMaker.Core.Tests.Unit\CoffeeMaker.Core.Tests.Unit.csproj", "{4E5012CF-03AB-4451-ACD7-AD8F2796B7EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeMaker.Core.Tests.Unit", "CoffeeMaker.Core.Tests.Unit\CoffeeMaker.Core.Tests.Unit.csproj", "{4E5012CF-03AB-4451-ACD7-AD8F2796B7EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMaker.Ui.Console", "CoffeeMaker.Ui.Console\CoffeeMaker.Ui.Console.csproj", "{C76B725E-B091-4237-8B91-FE8F54C1A162}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,6 +74,10 @@ Global
 		{4E5012CF-03AB-4451-ACD7-AD8F2796B7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E5012CF-03AB-4451-ACD7-AD8F2796B7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E5012CF-03AB-4451-ACD7-AD8F2796B7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C76B725E-B091-4237-8B91-FE8F54C1A162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76B725E-B091-4237-8B91-FE8F54C1A162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C76B725E-B091-4237-8B91-FE8F54C1A162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C76B725E-B091-4237-8B91-FE8F54C1A162}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
