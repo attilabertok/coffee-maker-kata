@@ -41,7 +41,8 @@ public partial class CanBrewInteractorTests
 
         [Theory]
         [MemberData(nameof(WarmerPlateStatusOptionsNotReadyForBrewing))]
-        public void Should_ReturnFalse_When_WarmerPlateDoesNotHaveAnEmptyPot(string reason,
+        public void Should_ReturnFalse_When_WarmerPlateDoesNotHaveAnEmptyPot(
+            string reason,
             WarmerPlateStatus warmerPlateStatus)
         {
             var result = sut.CanBrew(warmerPlateStatus, BoilerStatus.NotEmpty);
